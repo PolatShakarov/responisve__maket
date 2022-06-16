@@ -1,0 +1,12 @@
+.container {
+  width: 100%;  //kontent uzoqlashmay moslashish uchun
+  max-width: 1140px;//kontent uzoqlashmay moslashish uchun
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media only screen and (max-width: 900px) and (min-width:500px){
+  .container{
+    padding: 0 40px;
+  }
+}

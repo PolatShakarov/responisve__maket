@@ -1,0 +1,80 @@
+/* main ichidagi sectionlar */
+
+.hero {
+    padding: 80px 0;
+}
+
+.hero__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.hero__content {
+    width: 100%;
+    max-width: 470px;
+    margin-right: 20px;
+
+}
+
+.hero__title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 130%;
+/* or 39px */
+    color: #000000;
+}
+
+.hero__text {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+/* or 150% */
+    color: #000000;
+}
+
+.hero__link {
+    @include main-btn(232px) // @include orqali mixin ichidagi elementlarni chaqirib olsa bo'ladi
+}
+
+.hero__iframe {
+    border: none;
+    border-radius: 5px;
+    height: 258px;
+}
+
+@include max-width(900px){ // 900 ga kelganda bir qator pastga tushiruvchi amal
+    .hero__inner {
+        flex-direction: column; //kontentni bir qator pastga tushirib beradi
+    }
+
+    .hero__content {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .hero__iframe {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 510px){ // 510 ga kelganda yozuv 26px ga keladigan amal
+    .hero__content{
+        text-align: center;
+    }
+
+    .hero__title {
+        font-size: 26px;
+
+    }
+
+    .hero__iframe { // kontent ichidagi videoni ham qulay kichraytirish uchun
+        width: 100%;
+    }
+}

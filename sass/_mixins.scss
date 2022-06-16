@@ -1,0 +1,42 @@
+// Mobile uchun ixcham ko'rinishga olib kelish usuli
+
+
+@mixin list-global {
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+@mixin flex-starter {
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+
+}
+
+
+@mixin main-btn($width) {
+    display: inline-block;
+    padding: 8px;
+    width: $width;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background: #00BAFC;
+    border-radius: 5px;
+}
+
+@mixin max-width ($max-width) {
+    @media only screen and (max-width: $max-width){
+        @content;
+    }
+}
+
+@mixin min-width ($min-width) {
+    @media only screen and (min-width: $min-width){
+        @content;
+    }
+}

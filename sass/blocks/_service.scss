@@ -1,0 +1,166 @@
+.service {
+    padding: 56px 0;
+}
+
+.service__header {
+    width: 100%;
+    max-width: 719px;
+    margin: 0 auto 16px;
+
+}
+
+.service__title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 130%;
+    /* or 31px */
+    text-align: center;
+    color: #000000;
+}
+
+.service__text {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+    text-align: center;
+    color: #000000;
+
+}
+
+.service__list { //shu klass ichiga @include ga Mixins ichidagi list-globalni olib kelish mumkin
+    
+    @include list-global; // <----
+    
+    @include flex-starter;
+
+    flex-wrap: wrap; // sig'maganlarni pastga tushirib ketadi
+    margin: -24px -35px;
+    justify-content: center;
+}
+
+.service__item {
+    width: 100%;
+    max-width: 320px;
+    margin: 24px 35px;
+
+    & > .service__card::before{ // bitta kontent ichiga bir nechta background kontent berish usuli
+        display: inline-block;
+        width: 200px;
+        height: 130px;
+        margin-bottom: 16px;
+        background-image: url("../../images/website-illustration.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: "";
+    }
+
+    &:nth-child(2) > .service__card::before { // nth-child (2) 2-service__cardga joylashtirish usuli
+        background-image: url("../../images/bot-illustration.svg");
+    }
+
+    
+    &:nth-child(3) > .service__card::before { // nth-child (2) 2-service__cardga joylashtirish usuli
+        background-image: url("../../images/smm-illustration.svg");
+    }
+
+    
+    &:nth-child(4) > .service__card::before { // nth-child (2) 2-service__cardga joylashtirish usuli
+        background-image: url("../../images/design-illustration.svg");
+    }
+
+    
+    &:nth-child(5) > .service__card::before { // nth-child (2) 2-service__cardga joylashtirish usuli
+        background-image: url("../../images/crm-illustration.svg");
+    }
+}
+
+.service__card {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-decoration: none;
+
+    
+}
+
+.service-card__title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+    /* identical to box height, or 26px */
+    text-align: center;
+    color: #000000;
+}
+
+.service-card__text {
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    text-align: center;
+    color: #000000; 
+}
+
+.service__footer {
+    @include flex-starter;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.service__order-link {
+    @include main-btn(167px); // mixins.scss da tayyor button stillari bor, @include yordamida chaqirish mumkin 
+    margin-right: 16px;
+}
+
+.service__page-link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration-line: underline;
+    color: #00BAFC;
+}
+
+@include max-width (790px){
+    .service__list{
+     margin: -10px -15px;
+    }
+
+    .service__item{
+        margin: 10px 15px;
+    }
+}
+
+@include max-width (750px){
+    .service__item {
+        max-width: 280px;
+    }
+}
+
+@include max-width (670px){
+    .service__item {
+        max-width: 100%;
+    }
+}
+
+@include max-width (415px){
+    .service__footer{
+        flex-direction: column;
+        
+    }
+
+    .service__order-link {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}

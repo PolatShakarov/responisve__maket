@@ -1,0 +1,67 @@
+/* saytning tepa qismi uchun */
+
+.site-header {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.site-header__inner {
+    @include flex-starter;
+}
+
+.menu {
+    margin-left: auto;
+}
+
+.menu__list {
+    @include flex-starter;
+    @include list-global;
+}
+
+.menu__link {
+    display: inline-block;
+    padding: 16px;
+    font-size: 15px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #000000;
+
+    &--tel{
+        @include main-btn(159px)
+    }
+}
+
+.burger__button {
+    display: none;
+    margin-left: auto;
+    padding: 16px;
+    font-size: 25px;
+    border: none;
+    background-color: transparent;
+}
+
+@media only screen and(max-width:740px) {
+    .menu{
+        position: absolute;
+        top: -200%;
+        right: 0;
+        height: 100vh;
+        width: 50%;
+        background-color: cornflowerblue;
+        transition: all 0.5s ease; // ko'rsatib chiqish tezligi
+
+        &--open { // header 740 ga kelganda pastga tushib
+        top: 60px;
+        
+        }
+    }
+
+    .menu__list {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .burger__button {
+        display: block;
+    }
+}
